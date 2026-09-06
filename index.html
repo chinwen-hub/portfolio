@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChinWen — UGC Creator</title>
+<meta name="description" content="UGC media kit for ChinWen — language, study and travel content creator based in Germany.">
+<meta property="og:title" content="ChinWen — UGC Creator">
+<meta property="og:description" content="Living Limitless, Creating Authentic.">
+<meta property="og:image" content="media/portrait.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Karla:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+*{box-sizing:border-box}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+:root{
+  --paper:#F6F4F3;
+  --surface:#FFFFFF;
+  --sunken:#EDE9E7;
+  --ink:#1A1614;
+  --muted:#6E6360;
+  --line:#E1DAD7;
+  --seal:#C13228;
+  --seal-ink:#FFFFFF;
+  --shadow:0 1px 2px rgba(26,22,20,.06);
+  --serif:"Newsreader","Iowan Old Style",Georgia,serif;
+  --sans:"Karla","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --cjk:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#15100F;
+    --surface:#1E1817;
+    --sunken:#241D1B;
+    --ink:#F2ECE9;
+    --muted:#A2938E;
+    --line:#332A27;
+    --seal:#E85B4E;
+    --seal-ink:#1A0F0D;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#15100F;
+  --surface:#1E1817;
+  --sunken:#241D1B;
+  --ink:#F2ECE9;
+  --muted:#A2938E;
+  --line:#332A27;
+  --seal:#E85B4E;
+  --seal-ink:#1A0F0D;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--seal);outline-offset:3px;border-radius:2px}
+
+.wrap{
+  max-width:1060px;
+  margin:0 auto;
+  padding:clamp(26px,5vw,64px) clamp(18px,4vw,48px) clamp(48px,7vw,96px);
+  display:flex;
+  flex-direction:column;
+  gap:clamp(40px,6vw,72px);
+}
+
+/* ---------- shared bits ---------- */
+.eyebrow{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--seal);
+  margin:0;
+}
+.section-head{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:22px;
+}
+.section-head .rule{
+  flex:1;
+  height:1px;
+  background:var(--line);
+}
+.lede{
+  font-family:var(--serif);
+  font-size:clamp(17px,2vw,20px);
+  line-height:1.62;
+  color:var(--ink);
+  max-width:62ch;
+  margin:0;
+}
+
+/* ---------- masthead ---------- */
+.masthead{
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);
+  gap:clamp(24px,4vw,48px);
+  align-items:end;
+}
+.mast-id{display:flex;flex-direction:column;gap:18px}
+.name{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(52px,9vw,96px);
+  line-height:.94;
+  letter-spacing:-.02em;
+  margin:0;
+  text-wrap:balance;
+}
+.role{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin:0;
+}
+
+/* ---------- quote ---------- */
+.mission{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:clamp(26px,4vw,40px) 0;
+  display:grid;
+  grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  gap:clamp(24px,4vw,48px);
+  align-items:start;
+}
+.mission blockquote{
+  margin:0;
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(28px,4.4vw,44px);
+  line-height:1.14;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+}
+.mission blockquote em{font-style:normal;color:var(--seal)}
+
+/* ---------- stats ---------- */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  border-radius:4px;
+  overflow:hidden;
+}
+.stat{
+  background:var(--surface);
+  padding:22px 20px 20px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.stat .figure{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(34px,4.6vw,46px);
+  line-height:1;
+  letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums;
+}
+.stat.peak .figure{color:var(--seal)}
+.stat .who{
+  font-family:var(--mono);
+  font-size:11.5px;
+  color:var(--muted);
+  opacity:.85;
+}
+.stat .label{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* ---------- image slots ---------- */
+.slot{
+  position:relative;
+  text-decoration:none;
+  display:block;
+  width:100%;
+  padding:0;
+  border:1px dashed var(--line);
+  border-radius:4px;
+  background:var(--sunken);
+  color:var(--muted);
+  font:inherit;
+  overflow:hidden;
+  cursor:default;
+}
+.slot .slot-media{
+  position:absolute;inset:0;
+  display:grid;place-items:center;
+}
+.slot .slot-media img,
+.slot .slot-media video{
+  width:100%;height:100%;
+  object-fit:cover;display:block;
+}
+.slot .playing{
+  position:absolute;left:8px;bottom:8px;
+  display:none;
+  padding:3px 7px;
+  border-radius:3px;
+  background:rgba(26,22,20,.66);
+  color:#fff;
+  font-family:var(--mono);
+  font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+}
+.slot.has-clip .playing{display:block}
+a.slot:hover{border-color:var(--seal)}
+.slot.is-filled{border-style:solid;border-color:var(--line);background:var(--surface)}
+.slot.is-filled .slot-hint{display:none}
+.portrait{aspect-ratio:4/5}
+.reel{aspect-ratio:9/16}
+.logo-slot{
+  width:66px;
+  flex:0 0 66px;
+  aspect-ratio:1/1;
+  border-radius:15px;
+}
+.logo-slot .slot-hint{font-size:9px;letter-spacing:.08em;padding:6px;gap:2px}
+.logo-slot .slot-hint .plus{font-size:15px}
+.logo-slot.is-filled{border-color:transparent;background:transparent}
+.logo-slot 
+/* ---------- brands ---------- */
+.brands{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(216px,1fr));
+  gap:16px 24px;
+}
+.brand{display:flex;flex-direction:row;align-items:center;gap:14px}
+.brand .brand-name{
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:15px;
+  letter-spacing:-.01em;
+}
+.brand .brand-note{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* ---------- reels ---------- */
+.reels{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(178px,1fr));
+  gap:clamp(14px,2vw,20px);
+}
+.reel-card{display:flex;flex-direction:column;gap:10px}
+.reel-meta{display:flex;flex-direction:column;gap:3px}
+.reel-plat{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--seal);
+}
+.reel-acct{
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--muted);
+  word-break:break-all;
+}
+.reel-links{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.reel-link{
+  font-family:var(--sans);
+  font-size:13px;
+  font-weight:500;
+  text-decoration:none;
+  color:var(--ink);
+  border-bottom:1px solid var(--line);
+  align-self:flex-start;
+  padding-bottom:2px;
+}
+.reel-link:hover{color:var(--seal);border-color:var(--seal)}
+
+/* ---------- contact ---------- */
+.contact{
+  display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;
+  gap:20px;
+  padding:clamp(24px,3.5vw,34px);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:4px;
+}
+.contact .mail{
+  font-family:var(--mono);
+  font-size:clamp(16px,2.4vw,22px);
+  text-decoration:none;
+  border-bottom:2px solid var(--seal);
+  padding-bottom:3px;
+  word-break:break-all;
+}
+.contact .mail:hover{color:var(--seal)}
+
+.contact-main{display:flex;flex-direction:column;gap:9px}
+.mast-details{gap:12px 32px}
+.mast-details dd{font-size:13px}
+.details{
+  display:flex;flex-wrap:wrap;
+  gap:14px 40px;
+  margin:0;
+}
+.detail{display:flex;flex-direction:column;gap:3px}
+.details dt{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.details dd{
+  margin:0;
+  font-family:var(--mono);
+  font-size:13.5px;
+  color:var(--ink);
+}
+.details dd a{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+.details dd a:hover{color:var(--seal);border-color:var(--seal)}
+
+/* ---------- edit affordance ---------- */
+
+@media (max-width:720px){
+  .masthead{grid-template-columns:minmax(0,1fr)}
+  .mission{grid-template-columns:minmax(0,1fr)}
+  .portrait{aspect-ratio:3/4}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{
+    body{background:#fff}
+  .reel-card,.stat,.brand{break-inside:avoid}
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="mast-id">
+      <div>
+        <h1 class="name">ChinWen</h1>
+        <p class="role">Content Creator &nbsp;·&nbsp; Germany</p>
+      </div>
+      <dl class="details mast-details">
+        <div class="detail">
+          <dt>Main account</dt>
+          <dd><a href="https://www.instagram.com/cww_in_de" target="_blank" rel="noopener">@cww_in_de</a></dd>
+        </div>
+        <div class="detail">
+          <dt>Email</dt>
+          <dd><a href="mailto:wo4wowo@gmail.com">wo4wowo@gmail.com</a></dd>
+        </div>
+        <div class="detail">
+          <dt>Content languages</dt>
+          <dd>English · German · Chinese</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="slot portrait is-filled"><span class="slot-media"><img src="media/portrait.jpg" alt="Portrait of ChinWen"></span></div>
+  </header>
+
+  <section class="mission">
+    <blockquote>Living <em>Limitless</em>, Creating <em>Authentic</em>.</blockquote>
+    <p class="lede">I once worked as a medical doctor, but my heart craved a life without limits. In order to challenge myself, I moved to Germany alone and built a completely new life. That same courage to explore the unknown is what drives my content today. I usually partner with brands in studying, language learning, and travel, from which I've learned that meaningful collaborations do more than just showcase a tool; they genuinely empower my community to break their own boundaries and tell their authentic stories.</p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">Reach &amp; Results</p>
+      <span class="rule"></span>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <span class="figure">60K+</span>
+        <span class="label">Main account · monthly views</span>
+        <span class="who">@cww_in_de</span>
+      </div>
+      <div class="stat">
+        <span class="figure">60K+</span>
+        <span class="label">Monthly views · each brand account</span>
+        <span class="who">per account, not combined</span>
+      </div>
+      <div class="stat">
+        <span class="figure">1.6K+</span>
+        <span class="label">Average engagements</span>
+      </div>
+      <div class="stat peak">
+        <span class="figure">4.6M</span>
+        <span class="label">Top performing video</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">UGC Collaborations</p>
+      <span class="rule"></span>
+    </div>
+    <div class="brands">
+      <div class="brand">
+        <div class="slot logo-slot is-filled"><span class="slot-media"><img src="media/brand-danko.png" alt="Danko"></span></div>
+        <div>
+          <div class="brand-name">Danko</div>
+          <div class="brand-note">AI live translation</div>
+        </div>
+      </div>
+      <div class="brand">
+        <div class="slot logo-slot is-filled"><span class="slot-media"><img src="media/brand-bunpo.png" alt="Bunpo"></span></div>
+        <div>
+          <div class="brand-name">Bunpo</div>
+          <div class="brand-note">Language learning app</div>
+        </div>
+      </div>
+      <div class="brand">
+        <div class="slot logo-slot is-filled"><span class="slot-media"><img src="media/brand-verbi.png" alt="Verbi"></span></div>
+        <div>
+          <div class="brand-name">Verbi</div>
+          <div class="brand-note">Language learning app</div>
+        </div>
+      </div>
+      <div class="brand">
+        <div class="slot logo-slot is-filled"><span class="slot-media"><img src="media/brand-tenmin.png" alt="Tenmin AI"></span></div>
+        <div>
+          <div class="brand-name">Tenmin AI</div>
+          <div class="brand-note">Language learning app</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">Video Samples</p>
+      <span class="rule"></span>
+    </div>
+    <div class="reels">
+
+      <article class="reel-card">
+        <a class="slot reel is-filled has-clip" href="https://www.instagram.com/deutschmitcww/" target="_blank" rel="noopener"><span class="slot-media"><video src="media/reel-1.mp4" autoplay muted loop playsinline preload="metadata"></video></span><span class="playing">Muted clip</span></a>
+        <div class="reel-meta">
+          <span class="reel-plat">Collab with Bunpo</span>
+        </div>
+        <div class="reel-links">
+          <a class="reel-link" href="https://www.instagram.com/deutschmitcww/" target="_blank" rel="noopener">Watch on Instagram →</a>
+          <a class="reel-link" href="https://www.tiktok.com/@deutschmitcww" target="_blank" rel="noopener">Watch on TikTok →</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <a class="slot reel is-filled has-clip" href="https://www.instagram.com/reel/Dcg-Bbhhb10/" target="_blank" rel="noopener"><span class="slot-media"><video src="media/reel-2.mp4" autoplay muted loop playsinline preload="metadata"></video></span><span class="playing">Muted clip</span></a>
+        <div class="reel-meta">
+          <span class="reel-plat">Collab with Danko</span>
+        </div>
+        <div class="reel-links">
+          <a class="reel-link" href="https://www.instagram.com/reel/Dcg-Bbhhb10/" target="_blank" rel="noopener">Watch on Instagram →</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <a class="slot reel is-filled has-clip" href="https://www.instagram.com/cw.learn.deutsch/" target="_blank" rel="noopener"><span class="slot-media"><video src="media/reel-3.mp4" autoplay muted loop playsinline preload="metadata"></video></span><span class="playing">Muted clip</span></a>
+        <div class="reel-meta">
+          <span class="reel-plat">Collab with Tenmin AI</span>
+        </div>
+        <div class="reel-links">
+          <a class="reel-link" href="https://www.instagram.com/cw.learn.deutsch/" target="_blank" rel="noopener">Watch on Instagram →</a>
+          <a class="reel-link" href="https://www.tiktok.com/@cw.learn.german" target="_blank" rel="noopener">Watch on TikTok →</a>
+        </div>
+      </article>
+
+      <article class="reel-card">
+        <a class="slot reel is-filled has-clip" href="https://www.instagram.com/auslaederin" target="_blank" rel="noopener"><span class="slot-media"><video src="media/reel-4.mp4" autoplay muted loop playsinline preload="metadata"></video></span><span class="playing">Muted clip</span></a>
+        <div class="reel-meta">
+          <span class="reel-plat">Collab with Verbi</span>
+        </div>
+        <div class="reel-links">
+          <a class="reel-link" href="https://www.instagram.com/auslaederin" target="_blank" rel="noopener">Watch on Instagram →</a>
+          <a class="reel-link" href="https://www.tiktok.com/@auslaeder" target="_blank" rel="noopener">Watch on TikTok →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="contact-main">
+      <p class="eyebrow">Work with me</p>
+      <a class="mail" href="mailto:wo4wowo@gmail.com">wo4wowo@gmail.com</a>
+    </div>
+    <dl class="details">
+      <div class="detail">
+        <dt>Main account</dt>
+        <dd><a href="https://www.instagram.com/cww_in_de" target="_blank" rel="noopener">@cww_in_de</a></dd>
+      </div>
+      <div class="detail">
+        <dt>Content languages</dt>
+        <dd>English · German · Chinese</dd>
+      </div>
+    </dl>
+  </section>
+
+  <footer class="colophon">
+    <span>ChinWen · UGC Portfolio</span>
+  </footer>
+
+</div>
+
+
+</body>
+</html>
