@@ -243,7 +243,6 @@ a.slot:hover{border-color:var(--seal)}
 .logo-slot .slot-hint{font-size:9px;letter-spacing:.08em;padding:6px;gap:2px}
 .logo-slot .slot-hint .plus{font-size:15px}
 .logo-slot.is-filled{border-color:transparent;background:transparent}
-.logo-slot 
 /* ---------- brands ---------- */
 .brands{
   display:grid;
@@ -272,7 +271,23 @@ a.slot:hover{border-color:var(--seal)}
   gap:clamp(14px,2vw,20px);
 }
 .reel-card{display:flex;flex-direction:column;gap:10px}
-.reel-meta{display:flex;flex-direction:column;gap:3px}
+.reel-meta{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.reel-views{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(30px,3.6vw,38px);
+  line-height:1;
+  letter-spacing:-.025em;
+  color:var(--seal);
+  font-variant-numeric:tabular-nums;
+}
+.reel-views-label{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
 .reel-plat{
   font-family:var(--mono);
   font-size:10.5px;
@@ -462,18 +477,20 @@ a.slot:hover{border-color:var(--seal)}
       <article class="reel-card">
         <a class="slot reel is-filled has-clip" href="https://www.instagram.com/auslaederin/" target="_blank" rel="noopener"><span class="slot-media"><video src="media/reel-1.mp4" autoplay muted loop playsinline preload="metadata"></video></span><span class="playing">Muted clip</span></a>
         <div class="reel-meta">
-          <span class="reel-plat">478K+ views </span>
+          <span class="reel-views">478K+</span>
+          <span class="reel-views-label">views</span>
         </div>
         <div class="reel-links">
           <a class="reel-link" href="https://www.instagram.com/p/DdbNa2bgUD4/" target="_blank" rel="noopener">Watch on Instagram →</a>
-          <a class="reel-link" href="https://www.tiktok.com/@auslaeder/video/7686818734962494741?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">Watch on TikTok →</a>
+          <a class="reel-link" href="https://www.tiktok.com/@auslaeder/video/7686818734962494741" target="_blank" rel="noopener">Watch on TikTok →</a>
         </div>
       </article>
 
       <article class="reel-card">
         <a class="slot reel is-filled has-clip" href="https://www.instagram.com/cw.learn.deutsch/" target="_blank" rel="noopener"><span class="slot-media"><video src="media/reel-2.mp4" autoplay muted loop playsinline preload="metadata"></video></span><span class="playing">Muted clip</span></a>
         <div class="reel-meta">
-          <span class="reel-plat">321K+ views </span>
+          <span class="reel-views">321K+</span>
+          <span class="reel-views-label">views</span>
         </div>
         <div class="reel-links">
           <a class="reel-link" href="https://www.instagram.com/reel/DdRW2d6Eelw/" target="_blank" rel="noopener">Watch on Instagram →</a>
@@ -484,7 +501,8 @@ a.slot:hover{border-color:var(--seal)}
       <article class="reel-card">
         <a class="slot reel is-filled has-clip" href="https://www.tiktok.com/@deutschmitcww" target="_blank" rel="noopener"><span class="slot-media"><video src="media/reel-3.mp4" autoplay muted loop playsinline preload="metadata"></video></span><span class="playing">Muted clip</span></a>
         <div class="reel-meta">
-          <span class="reel-plat">35K+ Views</span>
+          <span class="reel-views">35K+</span>
+          <span class="reel-views-label">views</span>
         </div>
         <div class="reel-links">
           <a class="reel-link" href="https://www.instagram.com/reel/Dc529FHGKXV/" target="_blank" rel="noopener">Watch on Instagram →</a>
